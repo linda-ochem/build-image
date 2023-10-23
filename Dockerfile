@@ -1,11 +1,13 @@
 # Use an official Node.js runtime as a parent image
 FROM node:14
 
+RUN mkdir /myApp
+
 # Create and set the working directory in the container
-WORKDIR /app
+WORKDIR /myApp
 
 # Bundle the application code inside the Docker image
-COPY app ./
+COPY package*.json app /myApp/
 
 # Install application dependencies
 RUN npm install
