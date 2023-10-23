@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node
 
 RUN mkdir /myApp
 
@@ -10,7 +10,7 @@ WORKDIR /myApp
 COPY package*.json app /myApp/
 
 # Install application dependencies
-RUN npm install
+RUN yarn install
 
 # Expose the port your application will run on
 EXPOSE 4500
