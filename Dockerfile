@@ -10,10 +10,10 @@ WORKDIR /myApp
 COPY package*.json app /myApp/
 
 # Install application dependencies
-RUN yarn install
+RUN npm install
 
 # Expose the port your application will run on
 EXPOSE 4500
 
 # Define the command to start your Node.js application
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
